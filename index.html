@@ -1,0 +1,65 @@
+<!--Author: wwww.developers.today 
+This is my second project on the html an css
+19.03.2022 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ut8-8">
+        <link rel="stylesheet" href="css/styles.css"> 
+        <link rel="icon" type="image/x-icon" href="img/icon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ</title>  
+    </head>
+    <body>
+        <!--Main content-->
+
+        <div class="main">
+            <h2>FAQ</h2>
+          
+            <!--FAQ accordion-->
+            <button class="faq">What does HTML mean?</button>
+            <div class="panel">
+              <p>HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.</p>
+            </div>
+            <hr>
+            <button class="faq">What does CSS mean?</button>
+            <div class="panel">
+              <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
+            </div>
+            <hr>
+            <button class="faq">What does JS mean?</button>
+            <div class="panel">
+              <p>JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries. </p>
+            </div>
+            <hr>
+        </div>
+
+        <!--JS script for toogle FAQ accordion-->
+
+        <script>
+            var acc = document.getElementsByClassName("faq");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+
+    <!--Footer of site-->
+
+    <footer>
+        <div class="links">
+            <a href="http://developers.today">Developers.Today</a>
+        </div>
+    </footer>
+    </body>
